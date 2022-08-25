@@ -1,27 +1,60 @@
 
-def convert_to_binary(num):
+def convert_to_binary(num):   
+    arr=[]
+    while (num!=1):
+        arr.append(round(num%2))
+        num=num-num%2
+        num/=2
+    arr.append(1)
+    arr=arr[::-1]
+    if(len(arr)<5):
+        while(len(arr)!=5):
+         arr.insert(0,0)
+    return arr
     
-        
-    return 0
-def complement(num):
-    for i in range(0,x):
-        if(x[i]==0)
-    return 0
+    
+def complement(x):
+    num=[]
+    one=[]#array  eg 0001
+    for i in range(0,len(x)):
+        one.append(0)
+        if(x[i]==0):
+            num.append(1) 
+        if(x[i]==1):
+            num.append(0) 
+    one.pop()
+    one.append(1)
+    num=add(num,one)
+    return num
+    
 def shift_right(c):
     c.pop()
     c.insert(0,c[0])
     return c
 def add(x,y):
+    carry=0
     z=[]
+    x=x[::-1]
+    y=y[::-1]
     for i in range(0,len(x)):
-        z.append(x[i]+y[i])
+        temp=x[i]+y[i]+carry
+        carry=0
+        if(temp==2):
+            carry=1
+            temp=0
+        if(temp==3):
+            carry=1
+            temp=1
+        z.append(temp)
+    z=z[::-1] 
     return z
-a=[1,1,0,1,0] #-6
+    
+a_=convert_to_binary(6) #-6
+print(a_)
+a=complement(a_)#-6
 
-a_=[0,0,1,1,0]#+6
-
-b=[1,1,1,0,0] #-4
-b_=[0,0,1,0,0]
+b_=convert_to_binary(4) #4
+b=complement(b_) #-4
 
 c=[0,0,0,0,0]+b+[0]
 print(c)

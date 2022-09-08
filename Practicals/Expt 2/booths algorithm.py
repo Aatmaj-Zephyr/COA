@@ -1,5 +1,7 @@
 
-def convert_to_binary(num):   
+def convert_to_binary(num):  
+    if(num<0):
+        return complement(convert_to_binary(-num))
     arr=[]
     while (num!=1):
         arr.append(round(num%2))
@@ -49,12 +51,11 @@ def add(x,y):
     z=z[::-1] 
     return z
     
-a_=convert_to_binary(6) #-6
+a_=convert_to_binary(int(input())) #-6
 print(a_)
 a=complement(a_)#-6
 
-b_=convert_to_binary(4) #4
-b=complement(b_) #-4
+b=convert_to_binary(-int(input())) #- ve sign because ioot works ??
 
 c=[0,0,0,0,0]+b+[0]
 print(c)
@@ -70,5 +71,5 @@ for i in range(0,5):
     print(c)
 c=c[5:-1]
 print(c)
-    
+
     

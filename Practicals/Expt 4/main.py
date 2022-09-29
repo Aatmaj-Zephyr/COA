@@ -64,21 +64,19 @@ c = [0] + [0, 0, 0, 0] + b
 print(c)
 
 for i in range(0, 4):
-    if(c[0]==0):
-       c=shift_left(c)
-       c[0:5]=add(c[0:5], [complement(a)[0]] +
-               complement(a))#add one extrabit (repeat sign bit)
-    elif(c[0]==1):
-       c=shift_left(c)
-       c[0:5]=add(c[0:5], [a[0]] +
-               a)#add one extrabit (repeat sign bit)
-    if(c[0]==0):
-        c[-1]=1
-    elif(c[0]==1):
-        c[-1]=0
+    if (c[0] == 0):
+        c = shift_left(c)
+        c[0:5] = add(c[0:5], [complement(a)[0]] +
+                     complement(a))  #add one extrabit (repeat sign bit)
+    elif (c[0] == 1):
+        c = shift_left(c)
+        c[0:5] = add(c[0:5], [a[0]] + a)  #add one extrabit (repeat sign bit)
+    if (c[0] == 0):
+        c[-1] = 1
+    elif (c[0] == 1):
+        c[-1] = 0
     print(c)
-if(c[0]==1):
-         c[0:5]=add(c[0:5], [a[0]] +
-               a)#add one extrabit (repeat sign bit)
+if (c[0] == 1):
+    c[0:5] = add(c[0:5], [a[0]] + a)  #add one extrabit (repeat sign bit)
 print(c[0:5])
 print(c[5:])

@@ -1,4 +1,5 @@
 # restoring division for unsigned integer
+# works for range 1-15
 def convert_to_binary(num):  
     if(num<0):
         return complement(convert_to_binary(-num))

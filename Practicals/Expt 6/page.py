@@ -1,20 +1,23 @@
-SIZE=4
-memory=[]
-hit=0
+SIZE = 4
+memory = []
+hit = 0
+
+
 def add(a):
-    global  hit
+    global hit
 
+    if (len(memory) == SIZE):
 
-    if(len(memory)==SIZE):
-
-        if(a in memory):
-            hit=hit+1
+        if (a in memory):
+            hit = hit + 1
             memory.remove(a)
         else:
             memory.pop(-1)
-    memory.insert(0,a)
+    memory.insert(0, a)
     print(memory)
-add(1)        
+
+
+add(1)
 add(2)
 add(3)
 add(5)
